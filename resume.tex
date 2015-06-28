@@ -1,0 +1,140 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin=1in]{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{paralist}
+
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+\begin{document}
+
+\name{{\huge Jonathan Kenneth Starr}}
+\address{40 N IH35 APT 10D2, Austin, Texas 78701}
+\address{(512) 237-7562 \\ \url{jonstarr@utexas.edu}}
+ 
+\begin{resume}
+
+\section{EDUCATION} 
+{\sl Bachelor of Science,} Electrical and Computer Engineering \\
+  The University of Texas at Austin, Austin, Texas \\
+  Graduated \textit{summa cum laude} in May 2009 with GPA 3.9 / 4.0 \\
+  Capstone: \textit{An Acoustic Communication System for Underwater Vehicles}~\cite{starr2009acoustic}
+
+{\sl Master of Science,} Electrical and Computer Engineering, \\
+  Communications and Networking Systems (CommNetS), \\
+  The University of Texas at Austin, Austin, Texas \\
+  Graduated in December 2011 with GPA 3.7 / 4.0 \\
+  Thesis: \textit{Interference Alignment with Distributed Antenna Systems}~\cite{starr2011thesis}
+
+\section{TECHNICAL SKILLS} 
+  {\sl Programming, Markup, and Scripting Languages:}
+  \vspace*{-0.75\baselineskip}
+  \begin{multicols}{6}
+    \begin{compactitem}
+      \item{Python}
+      \item{C/C++}
+      \item{Matlab}
+      \item{Java}
+      \item{\LaTeX}
+    \end{compactitem}
+  \end{multicols}
+
+  \vspace*{-1.5\baselineskip}
+
+  {\sl Mathematical Proficiencies:}
+  \vspace*{-0.75\baselineskip}
+  \begin{multicols}{3}
+    \begin{compactitem}
+      \item{Real Analysis}
+      \item{Estimation Theory}
+      \item{Information Theory}
+      \item{Machine Learning}
+      \item{Probability Theory}
+      \item{System Theory}
+    \end{compactitem}
+  \end{multicols}
+
+  \vspace*{-1.5\baselineskip}
+
+  {\sl Specialized Skills:}
+  \vspace*{-0.75\baselineskip}
+  \begin{multicols}{2}
+    \begin{compactitem}
+      \item{Wireless Physical Layer Design}
+      \item{Electronic Design Automation}
+      \item{Embedded System Design}
+      \item{Digital Logic Design and Synthesis}
+    \end{compactitem}
+  \end{multicols}
+
+\section{EXPERIENCE} 
+
+{\sl Engineering Scientist} \hfill April 2013 - September 2014 \\
+Applied Research Laboratories, Austin, Texas
+\begin{compactitem}
+  \item Developed sonar processing algorithms for naval systems
+  \item Developed signal analysis applications in Python and Matlab
+\end{compactitem}
+
+{\sl Wireless Baseband Engineer} \hfill September 2011 - April 2013 \\
+Kuma Signals LLC, Austin, Texas
+\begin{compactitem}  
+  \item Developed algorithms for wireless communications in extreme environments
+  \item Implemented algorithms for wireless communications on embedded platforms
+\end{compactitem}
+
+{\sl Graduate Research Assistant} \hfill August 2009 - December 2011 \\
+The University of Texas at Austin, Wireless Systems Innovation Lab, Austin, Texas
+\begin{compactitem}  
+  \item Implemented a real-time prototype of a wireless communication system~\cite{massey2012implementation}
+  \item (Co)Authored two conference papers on wireless communications~\cite{starr2011interference,massey2012implementation}
+\end{compactitem}
+
+{\sl Engineering Intern} \hfill May 2011 - August 2011 \\
+Futurewei Technologies, Wireless Research Group, Rolling Meadows, Illinois
+\begin{compactitem}  
+  \item Develop algorithms for use in 4G cellular wireless backhauls
+  \item (Co)Authored three provisional patent applications on wireless communications~\cite{truong2011designing,starr2011method,starr2011variable}
+\end{compactitem}
+
+{\sl Student Researcher} \hfill June 2006 - August 2009 \\
+Applied Research Laboratories, Sonar Development Division, Austin, Texas
+\begin{compactitem}
+  \item Networked underwater vehicle components using embedded networking protocols
+  \item Fabricated printed circuit boards for power distribution, control, and monitoring
+\end{compactitem}
+
+\section{HONORS \& AWARDS}
+University Honors, all semesters \\
+William E. Douglass Endowed Presidential Scholarship in ECE \\
+Basdall Gardner Memorial Graduate MCD Fellowship in Engineering \\
+Microelectronics and Computer Development (MCD) Fellowship
+
+\section{SELECTED PUBLICATIONS}
+\nocite{*}
+\renewcommand{\refname}{}
+\bibliography{WSILabrv,references}
+\bibliographystyle{IEEEtran}
+\end{resume}
+\end{document}
