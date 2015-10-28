@@ -1,0 +1,75 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin=1in]{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{paralist}
+
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+\begin{document}
+
+\name{{\huge Jonathan Kenneth Starr}}
+\address{40 N IH35 APT 10D2, Austin, Texas 78701}
+\address{(512) 237-7562 \\ \url{jonstarr@utexas.edu}}
+ 
+\begin{resume}
+
+\section{PROFESSIONAL REFERENCES}
+\vspace*{\baselineskip}
+
+{\bf Bryan Silverthorn} \\
+{\sl Chief Technology Officer}, Angaza Design, LLC \\
+Phone: (512) 470-6354 \\
+Notes: Boss at Applied Research Laboratories.
+
+{\bf Abe Yarbrough} \\
+{\sl Engineering Scientist}, Applied Research Laboratories \\
+Phone: (512) 925-0085 \\
+Notes: Coworker at Applied Research Laboratories.
+
+{\bf Steve Peters} \\
+{\sl Chief Executive Officer}, Kuma Signals, LLC \\
+Phone: (512) 466-2037 \\
+Notes: Boss at Kuma Signals.
+
+\section{PERSONAL REFERENCES}
+\vspace*{\baselineskip}
+
+{\bf Perry Cavender} \\
+{\sl Technician}, RoboKind Robots, LLC \\
+Phone: (214) 206-6165 \\
+Notes: Best friend for 15+ years.
+
+{\bf Emily Taylor-Hobbs} \\
+{\sl Business Owner}, Luminosity Salon \\
+Phone: (512) 422-7533 \\
+Notes: Friend for 2-3 years.
+
+{\bf Tyler Hobbs} \\
+{\sl Distributed Systems Engineer}, DataStax \\
+Phone: (512) 740-0251 \\
+Notes: Friend for 2-3 years and project collaborator.
+
+\end{resume}
+\end{document}
