@@ -1,1 +1,8 @@
 .sconsign.dblite
+*.aux
+*.fls
+*.log
+*.out
+*.pdf
+*.bbl
+*.blg
