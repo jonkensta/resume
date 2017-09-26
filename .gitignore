@@ -3,6 +3,8 @@
 *.fls
 *.log
 *.out
-*.pdf
 *.bbl
 *.blg
+resume.pdf
+references.pdf
+covert_letter.pdf
