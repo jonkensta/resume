@@ -1,167 +1,233 @@
-% LaTeX resume using res.cls
-\documentclass[line,margin=1in]{res} 
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-\usepackage{newcent}   % uses new century schoolbook postscript font 
-\usepackage{hyperref}
-\usepackage{multicol}
-\usepackage{paralist}
+\documentclass[11pt,a4paper,sans]{moderncv}
 
+%% ModernCV themes
+\moderncvstyle{classic}
+\moderncvcolor{green}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
 
-\makeatletter
-\renewenvironment{thebibliography}[1]
-     {\list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-\makeatother
+%% Character encoding
+\usepackage[utf8]{inputenc}
 
+%% Adjust the page margins
+\usepackage[scale=0.8]{geometry}
+
+\setlength{\hintscolumnwidth}{0.19\textwidth}
+
+%% Personal data
+\firstname{Jonathan}
+\familyname{Starr}
+\title{Embedded Software Engineer}
+\address{1205 Larkwood Drive}{Austin, Texas 78723}
+\mobile{+1~(512)~237~7562}
+\email{jonstarr@utexas.edu}
+\homepage{www.github.com/jonkensta}
+\photo[64pt][0.4pt]{picture}
+\quote{%
+    Embedded software engineer in Austin, Texas with signal processing background,
+    seeking learning opportunities in the Internet-of-Things, wireless, control systems, and robotics.
+}
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
 \begin{document}
+\makecvtitle
 
-\name{{\huge Jonathan Kenneth Starr}}
-\address{1205 Larkwood Drive, Austin, Texas 78723}
-\address{512-237-7562 \\ \url{jonstarr@utexas.edu}}
- 
-\begin{resume}
+\section{Programming and Scripting Languages}
+\cvlistdoubleitem{C/C++}{Python}
+\cvlistdoubleitem{Git / Gerrit}{Markdown / reStructuredText / \LaTeX}
+\cvlistdoubleitem{SCons / Make / CMake}{GNU/Linux}
 
-\section{EDUCATION} 
-{\sl Bachelor of Science,}\ Electrical and Computer Engineering \\
-  The University of Texas at Austin, Austin, Texas \\
-  Graduated \textit{summa cum laude} in May 2009 with GPA 3.9 / 4.0 \\
-  Capstone: \textit{An Acoustic Communication System for Underwater Vehicles}~\cite{starr2009acoustic}
+\section{Libraries and Protocols}
+\cvlistdoubleitem{Numpy / Scipy / Matplotlib}{Bottle / Flask / SQLAlchemy}
+\cvlistdoubleitem{UART / SPI / I2C}{TCP / UDP / IP / WiFi / Ethernet}
+\cvlistdoubleitem{ZeroMQ / MQTT / RabbitMQ}{LoRa / Zigbee / BLE}
 
-{\sl Master of Science,}\ Electrical and Computer Engineering, \\
-  Communications and Networking Systems (CommNetS), \\
-  The University of Texas at Austin, Austin, Texas \\
-  Graduated in December 2011 with GPA 3.7 / 4.0 \\
-  Thesis: \textit{Interference Alignment with Distributed Antenna Systems}~\cite{starr2011thesis}
+\section{Operating Systems and Development Platforms}
+\cvlistdoubleitem{Zephyr}{FreeRTOS}
+\cvlistdoubleitem{Arduino / Atmel microcontrollers}{STM ARM microcontrollers}
+\cvlistdoubleitem{Raspberry Pi}{Espressif ESP32}
 
-\section{TECHNICAL SKILLS} 
-  {\sl Programming, Markup, and Scripting Languages:}
-  \vspace*{-0.75\baselineskip}
-  \begin{multicols}{5}
-    \begin{compactitem}
-      \item{Python}
-      \item{C/C++}
-      \item{Matlab}
-      \item{\LaTeX}
-      \item{Databases}
-    \end{compactitem}
-  \end{multicols}
+\section{Specialized Skills}
+\cvlistdoubleitem{Algorithms}{Embedded System Design}
+\cvlistdoubleitem{Wireless Physical Layer}{Networking Systems}
+\cvlistdoubleitem{Signal Processing}{Optimization Theory}
+\cvlistdoubleitem{Probability Theory}{Estimation Theory}
 
-  \vspace*{-1.5\baselineskip}
+\section{Experience}
 
-  {\sl Embedded Platforms:}
-  \vspace*{-0.75\baselineskip}
-  \begin{multicols}{4}
-    \begin{compactitem}
-      \item{Atmel / Arduino}
-      \item{STM32}
-      \item{Raspberry Pi}
-      \item{AD-BF537}
-    \end{compactitem}
-  \end{multicols}
+\cventry%
+    {11.2017 --- 01.2020}%
+    {Embedded Software Engineer}%
+    {Carnegie Technologies}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Developed embedded C/C++ software for asset-tracking applications.
+        \item Supported board bring-up, manufacturing, and certification with test modes and scripting.
+        \item Developed pose-prediction subsystem for antenna-switching in satellite communications.
+        \item Developed algorithm for differential field updates saving 30\% on download time.
+        \item Mentored junior-level members of team in C/C++, Python, and engineering best practices.
+    \end{itemize}%
+    }
 
-  \vspace*{-1.5\baselineskip}
+\cventry%
+    {01.2016 --- 01.2017}%
+    {Wireless Baseband Engineer}%
+    {Kuma Signals LLC}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Implemented multi-target vehicular range-finder using matching-pursuits algorithm.
+        \item Implemented time-domain peak detection using frequency-domain sinusoidal fitting.
+        \item Created real-time multi-process testbed for range-finding using WiFi channel estimates.
+        \item Collected real-world vehicular radar data for final NSF report.
+    \end{itemize}%
+    }
 
-  {\sl Mathematical Proficiencies:}
-  \vspace*{-0.75\baselineskip}
-  \begin{multicols}{3}
-    \begin{compactitem}
-      \item{Real Analysis}
-      \item{Estimation Theory}
-      \item{Information Theory}
-      \item{Machine Learning}
-      \item{Probability Theory}
-      \item{System Theory}
-    \end{compactitem}
-  \end{multicols}
+\cventry%
+    {11.2015 --- 11.2017}%
+    {Founder \& President}%
+    {Prison Literacy Project}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Formed 501(c)(3) to send free used books to Texas state inmates.
+        \item Negotiated with Texas Dept.\ of Criminal Justice for bulk-shipping, saving 50\% on postage.
+        \item Ran fundraisers, solicited donations, and applied for grants to raise \$10,000 budget.
+        \item Created database with web application to manage book collection and shipping logistics.
+    \end{itemize}%
+    }
 
-  \vspace*{-1.5\baselineskip}
+\cventry%
+    {09.2014 --- 11.2015}%
+    {Engineering Contractor}%
+    {DBA Jonathan Starr Consulting}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Implemented acoustic communications channel over GSM carrier for payment backend.
+        \item Created microcontroller bootloader, build system, and partition loader.
+        \item Developed hardware impairment model for mm-wave phased arrays using Matlab.
+    \end{itemize}%
+    }
 
-  {\sl Specialized Skills:}
-  \vspace*{-0.75\baselineskip}
-  \begin{multicols}{2}
-    \begin{compactitem}
-      \item{Wireless Physical Layer Design}
-      \item{Electronic Design Automation}
-      \item{Embedded System Design}
-      \item{Digital Logic Design and Synthesis}
-    \end{compactitem}
-  \end{multicols}
+\cventry%
+    {04.2013 --- 09.2014}%
+    {Engineering Scientist}%
+    {Applied Research Laboratories}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Developed sonar array processing algorithms in Python for naval systems.
+        \item Developed multi-aspect target classification algorithm using hidden Markov model.
+        \item Developed sonar signal-strength metric using acoustic pathloss models and Kalman filter.
+        \item Used decision-tree learning and support vector machines for target classification.
+        \item Created Python support libraries for sonar-data parsing, processing, and management.
+    \end{itemize}%
+    }
 
-\section{EXPERIENCE} 
+\cventry%
+    {09.2011 --- 04.2013}%
+    {Wireless Baseband Engineer}%
+    {Kuma Signals LLC}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Developed algorithms in Python for wireless communications in extreme environments.
+        \item Developed hardware impairment simulator for fast-fading in extreme mobility scenarios.
+        \item Synthesized minimal System-On-A-Chip using OpenRISC and OpenCores logic cores.
+        \item Implemented wireless equalization and decoding on embedded platform.
+    \end{itemize}%
+    }
 
-{\sl Embedded Software Engineer } \hfill November 2017 - Present \\
-Carnegie Technologies, Austin, Texas
-\begin{compactitem}
-  \item Develop embedded software for low-power positioning applications
-  \item Build and maintain long-range, low-power (LoRa) wireless sensor networks
-\end{compactitem}
+\cventry%
+    {05.2011 --- 09.2011}%
+    {Engineering Intern}%
+    {Futurewei Technologies}%
+    {Rolling Meadows, Illinois}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Used 3GPP spatial channel model to simulate multi-user interference scenarios.
+        \item Developed algorithms for interference management in 4G cellular wireless backhauls.
+        \item Wrote two provisional patent applications on 4G interference management methods.
+    \end{itemize}%
+    }
 
-{\sl Wireless Baseband Engineer } \hfill January 2016 - January 2017 \\
-Kuma Signals LLC, Austin, Texas
-\begin{compactitem}
-  \item Developed computational hardware impairment model for mm-wave phased arrays
-  \item Developed WiFi-based vehicular radar prototype in LabView and Python
-\end{compactitem}
+\cventry%
+    {08.2009 --- 12.2011}%
+    {Graduate Research Assistant}%
+    {Wireless Systems Innovation Lab}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Implemented a real-time prototype of a multi-antenna communication system.
+        \item Authored two conference papers on interference managmenet in wireless networks.
+        \item Managed network disk server and subversion version control system.
+        \item Competed and placed in 2011 KDD Cup machine learning challenge.
+        \item Selected, purchased, and assembled equipment for wireless laboratory with \$20,000 budget.
+        \item Mentored 4-person senior design group on software-defined radio capstone project.
+    \end{itemize}%
+    }
 
-{\sl Engineering Scientist} \hfill April 2013 - September 2014 \\
-Applied Research Laboratories, Austin, Texas
-\begin{compactitem}
-  \item Developed sonar processing algorithms for naval systems
-  \item Developed signal analysis applications in Python and Matlab
-\end{compactitem}
+\cventry%
+    {05.2006 --- 09.2009}%
+    {Student Researcher}%
+    {Applied Research Laboratories}%
+    {Austin, Texas}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Assisted in data collection and processing for research in acoustic wireless communications.
+        \item Prototyped acoustic wireless communications system using Analog Devices processor.
+        \item Created underwater vehicle kinematics simulator using C/C++ and physics library.
+        \item Networked underwater vehicle components using UART, I2C, and CAN protocols.
+        \item Fabricated printed circuit boards for power distribution, control, and monitoring.
+    \end{itemize}%
+    }
 
-{\sl Wireless Baseband Engineer} \hfill September 2011 - April 2013 \\
-Kuma Signals LLC, Austin, Texas
-\begin{compactitem}  
-  \item Developed algorithms for wireless communications in extreme environments
-  \item Implemented algorithms for wireless communications on embedded platforms
-\end{compactitem}
+\section{Education}
 
-{\sl Graduate Research Assistant} \hfill August 2009 - December 2011 \\
-The University of Texas at Austin, Wireless Systems Innovation Lab, Austin, Texas
-\begin{compactitem}  
-  \item Implemented a real-time prototype of a wireless communication system~\cite{massey2012implementation}
-  \item (Co)Authored two conference papers on wireless communications~\cite{starr2011interference,massey2012implementation}
-\end{compactitem}
+\cventry%
+    {08.2009 --- 12.2011}%
+    {M.S. in Electrical Engineering}%
+    {The University of Texas at Austin}%
+    {}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Specialization: Digital Signal Processing.
+        \item Graduated with GPA \textit{3.7 / 4.0}.
+        \item Thesis: \textit{Interference Alignment with Distributed Antenna Systems}.
+    \end{itemize}%
+    }
 
-{\sl Engineering Intern} \hfill May 2011 - August 2011 \\
-Futurewei Technologies, Wireless Research Group, Rolling Meadows, Illinois
-\begin{compactitem}  
-  \item Developed algorithms for use in 4G cellular wireless backhauls
-  \item (Co)Authored three provisional patent applications on wireless communications~\cite{truong2011designing,starr2011method,starr2011variable}
-\end{compactitem}
+\cventry%
+    {08.2004 --- 05.2009}%
+    {B.S. in Electrical Engineering}%
+    {The University of Texas at Austin}%
+    {}%
+    {}%
+    {%
+    \begin{itemize}
+        \item Specializations: Signal Processing and Telecommunication Networking.
+        \item Graduated \textit{summa cum laude} with GPA \textit{3.9 / 4.0}.
+        \item Capstone: \textit{An Acoustic Communication System for Underwater Vehicles}.
+    \end{itemize}%
+    }
 
-{\sl Student Researcher} \hfill June 2006 - August 2009 \\
-Applied Research Laboratories, Sonar Development Division, Austin, Texas
-\begin{compactitem}
-  \item Networked underwater vehicle components using embedded networking protocols
-  \item Fabricated printed circuit boards for power distribution, control, and monitoring
-\end{compactitem}
+%% A publications list
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications} % a bibtex file containing the list of publications
 
-\section{HONORS \& AWARDS}
-University Honors, all semesters \\
-William E. Douglass Endowed Presidential Scholarship in ECE \\
-Basdall Gardner Memorial Graduate MCD Fellowship in Engineering \\
-Microelectronics and Computer Development (MCD) Fellowship
-
-\section{SELECTED PUBLICATIONS}
-\nocite{*}
-\renewcommand{\refname}{}
-\bibliography{WSILabrv,references}
-\bibliographystyle{IEEEtran}
-\end{resume}
 \end{document}
